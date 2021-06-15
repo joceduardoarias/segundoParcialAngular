@@ -1,0 +1,7 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">Segundo parcial</a>
+    <form class="form-inline">
+      <button *ngIf="usuarioLogueado" class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="salir()">Salir</button>
+      <button *ngIf="usuarioLogueado" class="btn btn-outline-success my-2 my-sm-0" type="button">{{usuario}}</button>
+    </form>
+</nav>

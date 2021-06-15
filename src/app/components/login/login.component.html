@@ -1,0 +1,80 @@
+<body>
+  <div class="container ">
+    <div class="row">
+      <div class="login-container col-lg-4 col-md-6 col-sm-8 col-xs-12">
+        <div class="login-title text-center">
+          <h2><span>Parcial Dos<strong>Angular</strong></span></h2>
+        </div>
+        <div class="login-content">
+          <div class="login-header ">
+            <h3><strong>Welcome,</strong></h3>
+            <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis quam numquam</h5>
+          </div>
+          <div class="login-body">
+            <div class="login-form">
+              <form [formGroup]="formLogin">
+                <div class="form-group ">
+                  <div class="pos-r">
+                    <input id="form-username" type="text" name="form-username" placeholder="ejemplo@ejemplo.com"
+                      class="form-username form-control" formControlName="email">
+                    <i class="fa fa-user"></i>
+                    <span></span>
+                    <div
+                      *ngIf="formLogin.get('email')!.invalid && (formLogin.get('email')!.dirty || formLogin.get('email')!.touched)"
+                      class="alert-danger d-inline-flex"><span>email requerido</span></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="pos-r">
+                    <input id="form-password" type="password" name="form-password" placeholder="Contraseña..."
+                      class="form-password form-control" formControlName="contraseña">
+                    <i class="fa fa-lock"></i>
+                    <span></span>
+                    <div
+                      *ngIf="formLogin.get('contraseña')!.invalid && (formLogin.get('contraseña')!.dirty || formLogin.get('contraseña')!.touched)"
+                      class="alert-danger d-inline-flex"><span>contraseña requerida</span></div>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 10px;">
+                  <button type="button" class="btn btn-warning form-control"
+                    (click)="ingresar()"><strong>Ingresar</strong></button>
+                </div>
+              </form>
+            </div>
+          </div> <!-- end  login-body -->
+        </div><!-- end  login-content -->
+        <!-- <div class="login-footer text-center template">
+                    <h5>Don't have an account?<a href="#" class="bold"> Sign up </a>     </h5>
+                     <h5>Bootstrap login template made by <a href="https://github.com/azouaoui-med" class="bold"> Mohamed Azouaoui</a></h5>                   
+                </div> -->
+      </div> <!-- end  login-container -->
+
+    </div>
+  </div><!-- end container -->
+
+</body>
+<!-- <section>
+    <ion-fab horizontal="end" vertical="top" slot="fixed">
+      <ion-fab-button>
+        <fa-icon [icon]="faUsers"></fa-icon>
+      </ion-fab-button>
+      <ion-fab-list>
+        <ion-fab-button color="light" (click)='setiar("admin@admin.com")'>
+          <fa-icon [icon]="faUserTie" ></fa-icon>
+        </ion-fab-button>
+        <ion-fab-button color="light" (click)='setiar("anonimo@anonimo.com")'>
+          <fa-icon [icon]="faUserSecret"></fa-icon>
+        </ion-fab-button>
+        <ion-fab-button color="light" (click)='setiar("usuario@usuario.com")'>
+          <fa-icon [icon]="faUser"></fa-icon>
+        </ion-fab-button>
+        <ion-fab-button color="light" (click)='setiar("tester@tester.com")'>
+          <fa-icon [icon]=" faUsersCog"></fa-icon>
+        </ion-fab-button>
+        <ion-fab-button color="light" (click)='setiar("invitado@invitado.com")'>
+          <fa-icon [icon]="faUserPlus"></fa-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  </section> -->
