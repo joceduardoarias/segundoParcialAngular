@@ -26,6 +26,9 @@ import { RegistrarAdminComponent } from './components/registrar-admin/registrar-
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { AltaMateriaComponent } from './components/alta-materia/alta-materia.component';
 import { ListarProfesoresComponent } from './components/listar-profesores/listar-profesores.component';
+import { InscribirMateriaComponent } from './components/inscribir-materia/inscribir-materia.component';
+import { ListarMateriasComponent } from './components/listar-materias/listar-materias.component';
+import { ListarAlumnosComponent } from './components/listar-alumnos/listar-alumnos.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { ListarProfesoresComponent } from './components/listar-profesores/listar
     RegistrarAdminComponent,
     AdminHomeComponent,
     AltaMateriaComponent,
-    ListarProfesoresComponent
+    ListarProfesoresComponent,
+    InscribirMateriaComponent,
+    ListarMateriasComponent,
+    ListarAlumnosComponent
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,7 @@ export class UsuariosService {
     this.usuarios = this.usuariosRef.snapshotChanges().pipe(map(actions=>{
       return actions.map(a=>{
         const data = a.payload.doc.data() as unknown as Usuario;
+        data.id = a.payload.doc.id;
         return data;
       })
     }))

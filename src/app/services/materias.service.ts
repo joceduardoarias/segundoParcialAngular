@@ -19,6 +19,7 @@ export class MateriasService {
     this.materias = this.materiasRef.snapshotChanges().pipe(map(actions=>{
       return actions.map(a=>{
         const data = a.payload.doc.data() as unknown as Materia;
+        data.id = a.payload.doc.id;
         return data;
       })
     }))
@@ -28,5 +29,11 @@ export class MateriasService {
    create(materia:Materia){
     return this.materiasRef.add({...materia});
    }
-   
+
+   update(id: string, data: Materia): Promise<void> {
+    return this.materiasRef.doc(id).update({
+      cupo: data.cupo,
+      inscriptos: data.inscriptos,
+    });
+  }
 }

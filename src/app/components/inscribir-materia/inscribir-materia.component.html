@@ -1,0 +1,19 @@
+
+
+<p class="text-center" style="margin-top: 10px;">
+  <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
+    aria-controls="multiCollapseExample1">Oculta/ver materias</a>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2"
+    aria-expanded="false" aria-controls="multiCollapseExample2">Oculta/ver alumnos</button>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse"
+    aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Oculta/ver todo</button>
+</p>
+<section class="jumbotron text-center" style="margin-top: -60px;">
+    <h1>¿Como hacer una inscripción?</h1>
+    <p class="lead text-muted">Debe seleccionar una materia y alumno para hacer la inscripción.</p>  
+    <p>
+      <a class="btn btn-primary my-2" (click)="iniciaInscripcion()">Inscribir Alumno</a>
+    </p> 
+</section>
+<app-listar-materias (enviarMateria)="procesarMateria($event)"></app-listar-materias>
+<app-listar-alumnos (enviarAlumno)="procesarAlumno($event)"></app-listar-alumnos>
