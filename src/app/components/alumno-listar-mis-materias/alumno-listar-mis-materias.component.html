@@ -1,0 +1,28 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1>Listar mis materias</h1>
+    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+    <p>
+      <a class="btn btn-primary my-2" (click)="misMaterias()">Mostrar mis materias</a>
+      <!-- <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
+    </p>
+  </div>
+</section>
+<!-- <button type="button" class="btn btn-outline-primary" (click)="misMaterias()">Mostrar mis materias</button> -->
+<div *ngIf="arrayMisMaterias!=null" class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  <div class="col" *ngFor="let item of arrayMisMaterias">
+    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+      <div class="card-header py-3 text-white bg-primary border-primary">
+        <h4 class="my-0 fw-normal">{{item.nombre}}</h4>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title pricing-card-title">{{item.profesor}}<small class="text-muted fw-light"></small></h2>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li [appResaltar]="item.cupo">Cupos: {{item.cupo}}</li>
+          <li>Cuatrimestre: {{item.cuatrimestre}}</li>
+        </ul>        
+      </div>
+    </div>
+  </div>
+</div>
+

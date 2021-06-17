@@ -1,72 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import { Materia } from 'src/app/clases/materia';
+import { UsuariosService } from "../../services/usuarios.service";
+import { AuthService } from "../../services/auth.service";
 import { Usuario } from 'src/app/clases/usuario';
 import Swal from 'sweetalert2';
 import { MateriasService } from "../../services/materias.service";
 
 @Component({
-  selector: 'app-inscribir-materia',
-  templateUrl: './inscribir-materia.component.html',
-  styleUrls: ['./inscribir-materia.component.css']
+  selector: 'app-alumno-inscribir-materia',
+  templateUrl: './alumno-inscribir-materia.component.html',
+  styleUrls: ['./alumno-inscribir-materia.component.css']
 })
-export class InscribirMateriaComponent implements OnInit {
+export class AlumnoInscribirMateriaComponent implements OnInit {
 
   materia!:Materia;
   alumno!:Usuario;
-  alumnoHabilitado:boolean = false;
-  materiaHabilitado:boolean = false;
 
-  constructor(private materiaServicio:MateriasService) { }
+  constructor(private usuarioService:UsuariosService, private auth:AuthService,private materiaServicio:MateriasService) { 
+    this.checkearUsuario()
+  }
 
   ngOnInit(): void {
   }
 
-
-
-  procesarMateria($event:any){
-    console.log("id: ",$event.id);
-    console.log("materia: ",$event.nombre);
-    console.log($event);
-    
+  procesarMateria($event:Materia){
     this.materia = $event;
-    this.materiaHabilitado = true;
   }
 
-  procesarAlumno($event:any){
-    console.log("id: ",$event.id);
-    console.log("alumno: ",$event.email);
-    this.alumno = $event;
-    this.alumnoHabilitado = true;
-  }
+  async checkearUsuario(){
+    var user = await this.auth.getCurrentUser();
+    var dataUser : any = await this.usuarioService.getByEmail(user?.email);
 
-  inscribir(){
-    var resultado = 0;
-    
-    if (this.materia.cupo > 0) {
-      if (this.materia.inscriptos!=undefined) {
-        if (this.materia.inscriptos.includes(this.alumno.id)==false) {
-          this.materia.inscriptos.push(this.alumno.id);
-          this.materia.cupo--;
-          this.materiaServicio.update(this.materia.id,this.materia);
-          resultado = 1;
-        }else{
-          resultado = 2;
-        }
-      }else{
-        this.materia.inscriptos=[];
-        this.materia.inscriptos.push(this.alumno.id);
-        this.materia.cupo--;
-        this.materiaServicio.update(this.materia.id,this.materia);
-        resultado = 1;
-      }      
-    }else{
-      resultado = 3;
+    if (dataUser.email == user?.email) {
+      this.alumno = dataUser;
     }
-    return resultado;
   }
 
   iniciaInscripcion(){
-    if (this.alumnoHabilitado&&this.materiaHabilitado) {
+    
       Swal.fire({
         title: 'Esta seguro de inscribir a '+this.alumno.email+' en la materia '+this.materia.nombre,
         showDenyButton: true,
@@ -107,17 +78,35 @@ export class InscribirMateriaComponent implements OnInit {
           }
                     
         } else if (result.isDenied) {
-          this.alumnoHabilitado = false;
-          this.materiaHabilitado = false;
           Swal.fire('Se ha cancelado la inscripción', '', 'info')
         }
       })
-    }else{
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Debe seleccionar una materia y un alumno!',
-      });
+    
     }
-  }
+
+    inscribir(){
+      var resultado = 0;
+      
+      if (this.materia.cupo > 0) {
+        if (this.materia.inscriptos!=undefined) {
+          if (this.materia.inscriptos.includes(this.alumno.id)==false) {
+            this.materia.inscriptos.push(this.alumno.id);
+            this.materia.cupo--;
+            this.materiaServicio.update(this.materia.id,this.materia);
+            resultado = 1;
+          }else{
+            resultado = 2;
+          }
+        }else{
+          this.materia.inscriptos=[];
+          this.materia.inscriptos.push(this.alumno.id);
+          this.materia.cupo--;
+          this.materiaServicio.update(this.materia.id,this.materia);
+          resultado = 1;
+        }      
+      }else{
+        resultado = 3;
+      }
+      return resultado;
+    }
 }

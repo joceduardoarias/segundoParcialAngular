@@ -32,6 +32,12 @@ import { ListarAlumnosComponent } from './components/listar-alumnos/listar-alumn
 import { VerMateriasAdminComponent } from './components/ver-materias-admin/ver-materias-admin.component';
 import { ListarUsuariosComponent } from './components/listar-usuarios/listar-usuarios.component';
 import { FiltrarUsuarioPipe } from './pipes/filtrar-usuario.pipe';
+import { AlumnoHomeComponent } from './components/alumno-home/alumno-home.component';
+import { AlumnoInscribirMateriaComponent } from './components/alumno-inscribir-materia/alumno-inscribir-materia.component';
+import { AlumnoListarMateriaComponent } from './components/alumno-listar-materia/alumno-listar-materia.component';
+import { AlumnoMisMateriasComponent } from './components/alumno-mis-materias/alumno-mis-materias.component';
+import { AlumnoListarMisMateriasComponent } from './components/alumno-listar-mis-materias/alumno-listar-mis-materias.component';
+import { ResaltarDirective } from './directivas/resaltar.directive';
 
 @NgModule({
   declarations: [
@@ -50,7 +56,13 @@ import { FiltrarUsuarioPipe } from './pipes/filtrar-usuario.pipe';
     ListarAlumnosComponent,
     VerMateriasAdminComponent,
     ListarUsuariosComponent,
-    FiltrarUsuarioPipe
+    FiltrarUsuarioPipe,
+    AlumnoHomeComponent,
+    AlumnoInscribirMateriaComponent,
+    AlumnoListarMateriaComponent,
+    AlumnoMisMateriasComponent,
+    AlumnoListarMisMateriasComponent,
+    ResaltarDirective
   ],
   imports: [
     BrowserModule,

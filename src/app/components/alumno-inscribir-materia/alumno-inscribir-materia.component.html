@@ -1,0 +1,8 @@
+<section class="jumbotron text-center">
+    <h1>¿Como hacer una inscripción?</h1>
+    <p class="lead text-muted">Debe seleccionar una materia y luego click en inscribir alumno para hacer la inscripción.</p>
+    <p>
+      <a class="btn btn-primary my-2" (click)="iniciaInscripcion()">Inscribir Alumno</a>
+    </p>
+  </section>
+<app-alumno-listar-materia (enviarMateria)="procesarMateria($event)"></app-alumno-listar-materia>
