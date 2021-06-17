@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div class="title">
+    Alta materia
+  </div>
+  <div class="form">
+    <form [formGroup]="formMateria">
+      <div class="inputfield">
+        <label>Nombre</label>
+        <input type="text" class="input" formControlName="nombre">
+      </div>
+
+      <div class="inputfield">
+        <label>Cuatrimestre</label>
+        <input type="text" class="input" formControlName="cuatrimestre">
+      </div>
+      <div class="inputfield">
+        <label>Profesor</label>
+        <div class="custom_select">
+          <select formControlName="profesor">
+            <option value="-1">Seleccione una opción</option>
+            <option [value]="item.email" *ngFor="let item of arrProfesores">{{item.email}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="inputfield">
+        <label>Cupo</label>
+        <input type="text" class="input" formControlName="cupo">
+      </div>
+      <div class="inputfield">
+        <label>año</label>
+        <input type="date" class="input" formControlName="año">
+      </div>
+      <div class="inputfield">
+        <input type="button" value="guardar" class="btn" (click)="altaMateria()">
+      </div>
+    </form>
+  </div>
+</div>

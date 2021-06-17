@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <div class="title">
+      Ingrese sus datos
+    </div>
+    <div class="form">
+      <form [formGroup]="formRegistro">
+        <div class="inputfield">
+          <label>Email</label>
+          <input type="text" class="input" formControlName="email">
+        </div>
+  
+        <div class="inputfield">
+          <label>Password</label>
+          <input type="password" class="input" formControlName="contraseña">
+        </div>        
+        <div class="inputfield">
+          <label>Cargar imágen</label>
+          <input type="file" id="file" class="input" (change)="abtenerImagen($event)" accept="*.png.jpg">
+        </div>
+        <div class="inputfield">
+          <input type="button" value="Registrar" class="btn" (click)="registrar()">
+        </div>
+      </form>
+    </div>
+  </div>
+  <ngx-spinner></ngx-spinner>
+  

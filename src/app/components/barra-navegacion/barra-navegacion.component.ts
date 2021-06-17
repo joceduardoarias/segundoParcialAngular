@@ -10,7 +10,9 @@ export class BarraNavegacionComponent implements OnInit {
 
   usuarioLogueado:boolean = false;
   usuario!:string;
+
   constructor(private auth:AuthService) {
+    
     this.auth.isAuth().subscribe((res:any)=>{
       if (res) {
         this.usuarioLogueado = true;  
@@ -25,8 +27,6 @@ export class BarraNavegacionComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  
 
   salir(){
     this.auth.signOut();

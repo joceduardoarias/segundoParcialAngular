@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,10 +11,20 @@ import { environment } from 'src/environments/environment';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFireStorageModule } from "@angular/fire/storage";
-
+//Componentes
 import { HomeComponent } from './components/home/home.component';
 import { BarraNavegacionComponent } from './components/barra-navegacion/barra-navegacion.component';
 import { RegistrarComponent } from './components/registrar/registrar.component';
+//spinner
+import { NgxSpinnerModule } from "ngx-spinner";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//sweetAlert
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+//directivas
+import { UsuarioLogueadoDirective } from './directivas/usuario-logueado.directive';
+import { RegistrarAdminComponent } from './components/registrar-admin/registrar-admin.component';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { AltaMateriaComponent } from './components/alta-materia/alta-materia.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +32,11 @@ import { RegistrarComponent } from './components/registrar/registrar.component';
     LoginComponent,
     HomeComponent,
     BarraNavegacionComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    UsuarioLogueadoDirective,
+    RegistrarAdminComponent,
+    AdminHomeComponent,
+    AltaMateriaComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +46,13 @@ import { RegistrarComponent } from './components/registrar/registrar.component';
     AngularFirestoreModule,
     ReactiveFormsModule,
     FormsModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+    SweetAlert2Module
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
