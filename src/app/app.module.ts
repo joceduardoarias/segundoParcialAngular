@@ -29,6 +29,9 @@ import { ListarProfesoresComponent } from './components/listar-profesores/listar
 import { InscribirMateriaComponent } from './components/inscribir-materia/inscribir-materia.component';
 import { ListarMateriasComponent } from './components/listar-materias/listar-materias.component';
 import { ListarAlumnosComponent } from './components/listar-alumnos/listar-alumnos.component';
+import { VerMateriasAdminComponent } from './components/ver-materias-admin/ver-materias-admin.component';
+import { ListarUsuariosComponent } from './components/listar-usuarios/listar-usuarios.component';
+import { FiltrarUsuarioPipe } from './pipes/filtrar-usuario.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { ListarAlumnosComponent } from './components/listar-alumnos/listar-alumn
     ListarProfesoresComponent,
     InscribirMateriaComponent,
     ListarMateriasComponent,
-    ListarAlumnosComponent
+    ListarAlumnosComponent,
+    VerMateriasAdminComponent,
+    ListarUsuariosComponent,
+    FiltrarUsuarioPipe
   ],
   imports: [
     BrowserModule,

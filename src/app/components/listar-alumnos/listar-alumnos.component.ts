@@ -17,7 +17,7 @@ export class ListarAlumnosComponent implements OnInit {
   constructor(private usuariosService:UsuariosService) {
     this.usuariosService.usuarios.subscribe(res=>{
       res.map(a=>{
-        if (a.tipo!="alumno") {
+        if (a.tipo=="alumno") {
           this.arrayAlumnos.push(a);  
         }
       })

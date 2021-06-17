@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Materia } from 'src/app/clases/materia';
+import { Usuario } from 'src/app/clases/usuario';
 import { MateriasService } from "../../services/materias.service";
 
 @Component({
@@ -11,6 +12,9 @@ export class ListarMateriasComponent implements OnInit {
 
   @Output()
   enviarMateria:EventEmitter<any> =new EventEmitter<any>();
+
+  @Input()
+  arrayIdAlumnos!:Usuario[];
 
   arrayMaterias:Materia[]=[];
 

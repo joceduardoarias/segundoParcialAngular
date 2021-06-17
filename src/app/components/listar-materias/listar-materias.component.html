@@ -1,22 +1,29 @@
-<div class="col">  
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
-      <h1 class="text-center">Lista de materias</h1>
-      <div *ngIf="arrayMaterias!=null" class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-        <div class="col" *ngFor="let item of arrayMaterias">
-          <div class="card mb-4 rounded-3 shadow-sm border-primary">
-            <div class="card-header py-3 text-white bg-primary border-primary">
-              <h4 class="my-0 fw-normal">{{item.nombre}}</h4>
-            </div>
-            <div class="card-body">
-              <h2 class="card-title pricing-card-title">{{item.profesor}}<small class="text-muted fw-light"></small></h2>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>Cupos: {{item.cupo}}</li>
-                <li>Cuatrimestre: {{item.cuatrimestre}}</li>
-              </ul>
-              <button type="button" class="btn btn-outline-primary" (click)="materiaSeleccionada(item)">Seleccionar</button>
-            </div>
+<div class="col">
+  <div class="collapse multi-collapse" id="multiCollapseExample1">
+    <h1 class="text-center">Lista de materias</h1>
+    <div *ngIf="arrayMaterias!=null" class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col" *ngFor="let item of arrayMaterias">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-white bg-primary border-primary">
+            <h4 class="my-0 fw-normal">{{item.nombre}}</h4>
           </div>
-        </div>        
+          <div class="card-body">
+            <h2 class="card-title pricing-card-title">{{item.profesor}}<small class="text-muted fw-light"></small></h2>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Cupos: {{item.cupo}}</li>
+              <li>Cuatrimestre: {{item.cuatrimestre}}</li>
+            </ul>
+            <button type="button" class="btn btn-outline-primary"
+              (click)="materiaSeleccionada(item)">Seleccionar</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  <ul *ngIf="arrayIdAlumnos!=null" class="list-group">
+    <li *ngFor="let item of arrayIdAlumnos" class="list-group-item">{{item.email}}</li>
+  </ul>
+</div>
