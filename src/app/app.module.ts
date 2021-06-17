@@ -25,6 +25,7 @@ import { UsuarioLogueadoDirective } from './directivas/usuario-logueado.directiv
 import { RegistrarAdminComponent } from './components/registrar-admin/registrar-admin.component';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { AltaMateriaComponent } from './components/alta-materia/alta-materia.component';
+import { ListarProfesoresComponent } from './components/listar-profesores/listar-profesores.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AltaMateriaComponent } from './components/alta-materia/alta-materia.com
     UsuarioLogueadoDirective,
     RegistrarAdminComponent,
     AdminHomeComponent,
-    AltaMateriaComponent
+    AltaMateriaComponent,
+    ListarProfesoresComponent
   ],
   imports: [
     BrowserModule,

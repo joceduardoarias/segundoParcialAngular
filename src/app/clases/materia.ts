@@ -3,4 +3,5 @@ export class Materia {
     cuatrimestre!:string;
     cupo!:string;
     año!:string;
+    profesor!:string;
 }

@@ -16,10 +16,7 @@
       <div class="inputfield">
         <label>Profesor</label>
         <div class="custom_select">
-          <select formControlName="profesor">
-            <option value="-1">Seleccione una opción</option>
-            <option [value]="item.email" *ngFor="let item of arrProfesores">{{item.email}}</option>
-          </select>
+          <app-listar-profesores (enviarProfesor)="procesarProfesor($event)"></app-listar-profesores>
         </div>
       </div>
       <div class="inputfield">
