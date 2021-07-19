@@ -10,7 +10,8 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},  
   {path:'',redirectTo:'login',pathMatch:'full'},
   { path: 'administrador', loadChildren: () => import('./administrador/administrador.module').then(m => m.AdministradorModule) },
-  { path: 'alumno', loadChildren: () => import('./alumno/alumno.module').then(m => m.AlumnoModule) }
+  { path: 'alumno', loadChildren: () => import('./alumno/alumno.module').then(m => m.AlumnoModule) },
+  { path: 'profesor', loadChildren: () => import('./profesor/profesor.module').then(m => m.ProfesorModule) }
 ];
 
 @NgModule({

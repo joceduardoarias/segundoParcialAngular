@@ -5,24 +5,38 @@
   <div class="form">
     <form [formGroup]="formRegistro">
       <div class="inputfield">
-        <label>Email</label>
-        <input type="text" class="input" formControlName="email">
+        <label>Nombre</label>
+        <input type="text" class="input" formControlName="nombre">       
       </div>
+      <div
+      *ngIf="formRegistro.get('nombre')!.invalid && (formRegistro.get('nombre')!.dirty || formRegistro.get('nombre')!.touched)"
+      class="form-text text-muted" style="margin-left: 142px;margin-top: 0;"><span>*Nombre requerido</span></div>
 
+      <div class="inputfield">
+        <label>Email</label>
+        <input type="email" class="input" formControlName="email">
+      </div>
+      <div
+      *ngIf="formRegistro.get('email')!.invalid && (formRegistro.get('email')!.dirty || formRegistro.get('email')!.touched)"
+      class="form-text text-muted" style="margin-left: 142px;margin-top: 0;"><span>*Email requerido</span></div>
       <div class="inputfield">
         <label>Password</label>
         <input type="password" class="input" formControlName="contraseña">
       </div>
+      <div 
+      *ngIf="formRegistro.get('contraseña')!.invalid && (formRegistro.get('contraseña')!.dirty || formRegistro.get('contraseña')!.touched)"
+      class="form-text text-muted" style="margin-left: 142px;margin-top: 0;"><span>*Contraseña requerido</span></div>
       <div class="inputfield">
         <label>Tipo usuario</label>
         <div class="custom_select">
-          <select formControlName="tipo">
+          <select formControlName="tipo" >
             <option value="-1">Seleccione una opción</option>
             <option value="profesor">Profesor</option>
             <option value="alumno">Alumno</option>
           </select>
         </div>
       </div>
+      <!-- <div class="form-text text-muted" style="margin-left: 142px;margin-top: 0;"><span>*tipo requerido</span></div> -->
       <div class="inputfield">
         <label>Cargar imágen</label>
         <input type="file" id="file" class="input" (change)="abtenerImagen($event)" accept="*.png.jpg">

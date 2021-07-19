@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   formLogin: FormGroup = new FormGroup({});
 
   constructor(private auth:AuthService) { 
-    console.log(localStorage.getItem("usuario"));
+    
   }
 
   ngOnInit(): void {

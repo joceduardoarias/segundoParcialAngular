@@ -10,8 +10,10 @@ import { Usuario } from 'src/app/clases/usuario';
 })
 export class AlumnoMisMateriasComponent implements OnInit {
 
-  
+  verTodas!:boolean;
+
   constructor(private usuarioService:UsuariosService, private auth:AuthService) {
+    this.verTodas = false;
    }
 
   ngOnInit(): void {

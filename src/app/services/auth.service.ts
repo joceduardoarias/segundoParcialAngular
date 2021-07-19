@@ -29,8 +29,8 @@ export class AuthService {
  /**
   * cuando el usuario presione salir de la app lo llevará al login
   */
- public  signOut() {
-  this.afAuth.signOut().then(() => {
+ public async signOut() {
+  await this.afAuth.signOut().then(() => {
     localStorage.clear();
     this.router.navigate(['/login']);
   });

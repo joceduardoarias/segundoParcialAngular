@@ -24,6 +24,7 @@ export class RegistrarComponent implements OnInit {
     this.imagenURL = "";
     this.nuevoUsuario = new Usuario();
     this.formRegistro = new FormGroup({
+      nombre: new FormControl('',Validators.required),
       contraseña:  new FormControl('',Validators.required),
       email:  new FormControl('',[Validators.required,Validators.email]),
       tipo: new FormControl('-1',Validators.required),
@@ -84,6 +85,7 @@ export class RegistrarComponent implements OnInit {
           //Seteo los datos del usuario
           this.nuevoUsuario.email = this.formRegistro.get('email')?.value;
           this.nuevoUsuario.tipo = this.formRegistro.get('tipo')?.value;
+          this.nuevoUsuario.nombre = this.formRegistro.get('nombre')?.value;
           //Este setInterval se usa para ir revisando si ya esta cargada la url
           var interval = setInterval(()=>{
             this.nuevoUsuario.imagen = this.imagenURL;
@@ -96,9 +98,9 @@ export class RegistrarComponent implements OnInit {
             //Guardo los datos en la db
             this.usuarioService.create(this.nuevoUsuario);
             //Guardo Usuario en auth
-            this.auth.registrar(this.nuevoUsuario.email,this.formRegistro.get('contraseña')?.value);
-            this.auth.signOut();
+            this.auth.registrar(this.nuevoUsuario.email,this.formRegistro.get('contraseña')?.value);            
             //Envío al usuario al login
+            this.auth.signOut();
             Swal.fire({
               position: 'center',
               icon: 'success',
@@ -106,13 +108,29 @@ export class RegistrarComponent implements OnInit {
               showConfirmButton: false,
               timer: 1500
             });
-            this.router.navigateByUrl('login');
+            // this.router.navigateByUrl('login');
           }, 5000);                  
-          
-          
+        }else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Debe cargar una imágen!',
+          });
         }
+      }else{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Seleccione el tipo de usuario',
+        });
       } 
+    }else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Debe completar todos los campos!',
+      });
     }
    
-  }
+  } 
 }

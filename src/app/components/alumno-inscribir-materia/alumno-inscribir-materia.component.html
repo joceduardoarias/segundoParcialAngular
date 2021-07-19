@@ -5,4 +5,4 @@
       <a class="btn btn-primary my-2" (click)="iniciaInscripcion()">Inscribir Alumno</a>
     </p>
   </section>
-<app-alumno-listar-materia (enviarMateria)="procesarMateria($event)"></app-alumno-listar-materia>
+<app-alumno-listar-materia (enviarMateria)="procesarMateria($event)" [verMaterias]="true"></app-alumno-listar-materia>
