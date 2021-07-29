@@ -8,6 +8,9 @@
               <h4 class="my-0 fw-normal">{{item.nombre}}</h4>
             </div>
             <div class="card-body">
+              <div>
+                <img *ngIf="item.imagen" src={{item.imagen}} width="70px" height="70px">
+              </div>
               <h2 class="card-title pricing-card-title">{{item.profesor}}<small class="text-muted fw-light"></small></h2>
               <ul class="list-unstyled mt-3 mb-4">
                 <li>Cupos: {{item.cupo}}</li>
@@ -22,9 +25,11 @@
     </div>
   </div>
   
-  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-    <ul *ngIf="arrayAlumnoMateria!=null" class="list-group">
-      <li *ngFor="let item of arrayAlumnoMateria" class="list-group-item">{{item.email}}</li>
-    </ul>
+  <div *ngIf="arrayAlumnoMateria!=null" class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <ul *ngFor="let item of arrayAlumnoMateria" class="list-group">
+      <li class="list-group-item">{{item.email}}
+        <img src={{item.imagen}} alt="" height="50px" width="50px">
+      </li>
+    </ul>    
   </div>
   

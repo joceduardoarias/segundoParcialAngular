@@ -63,5 +63,10 @@ export class UsuariosService {
   });
  }
 
+ delete(id: string): Promise<void> {
+  console.log("Elimina este usuario",id);
+  
+  return this.usuariosRef.doc(id).delete();
+}
  
 }

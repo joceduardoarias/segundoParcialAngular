@@ -41,6 +41,7 @@ import { ProfesorHomeComponent } from './components/profesor-home/profesor-home.
 import { CalificacionPipe } from './pipes/calificacion.pipe';
 import { ProfesorMateriasComponent } from './components/profesor-materias/profesor-materias.component';
 import { ListarMateriasProfesorComponent } from './components/listar-materias-profesor/listar-materias-profesor.component';
+import { BajaUsuarioComponent } from './components/baja-usuario/baja-usuario.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { ListarMateriasProfesorComponent } from './components/listar-materias-pr
     ProfesorHomeComponent,
     CalificacionPipe,
     ProfesorMateriasComponent,
-    ListarMateriasProfesorComponent
+    ListarMateriasProfesorComponent,
+    BajaUsuarioComponent,
   ],
   imports: [
     BrowserModule,

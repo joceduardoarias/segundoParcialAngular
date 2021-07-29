@@ -28,6 +28,11 @@
         <input type="date" class="input" formControlName="año">
       </div>
       <div class="inputfield">
+        <label>Cargar imágen</label>
+        <input type="file" id="file" class="input" (change)="obtenerImagen($event)" accept="*.png.jpg">
+        <img *ngIf="imagenPreview" src={{imagenPreview}} width="50px" height="50px">
+      </div>
+      <div class="inputfield">
         <input type="button" value="guardar" class="btn" (click)="altaMateria()">
       </div>
     </form>

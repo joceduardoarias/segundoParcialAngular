@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter} from '@angular/core';
 import { Usuario } from 'src/app/clases/usuario';
 import { UsuariosService } from "../../services/usuarios.service";
 
@@ -15,6 +15,7 @@ export class ListarUsuariosComponent implements OnInit {
 
   constructor(private usuariosService:UsuariosService) {
     this.usuariosService.usuarios.subscribe(res=>{
+      this.arrayUsuarios = [];
       res.map(a=>{
           this.arrayUsuarios.push(a);  
       })
@@ -34,10 +35,6 @@ export class ListarUsuariosComponent implements OnInit {
       this.verFiltrado = true;
     }else{
       this.verFiltrado = false;
-      console.log(this.arrayUsuarios);
-      
     }
-    
-
-  }
+  }    
 }

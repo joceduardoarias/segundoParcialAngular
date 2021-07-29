@@ -6,4 +6,5 @@ export class Materia {
     profesor!:string;
     id!:string;
     inscriptos!:string[];
+    imagen!:string;
 }

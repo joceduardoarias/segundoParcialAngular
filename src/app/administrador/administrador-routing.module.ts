@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminHomeComponent } from '../components/admin-home/admin-home.component';
 import { AltaMateriaComponent } from '../components/alta-materia/alta-materia.component';
+import { BajaUsuarioComponent } from '../components/baja-usuario/baja-usuario.component';
 import { InscribirMateriaComponent } from '../components/inscribir-materia/inscribir-materia.component';
 import { ListarMateriasComponent } from '../components/listar-materias/listar-materias.component';
 import { ListarUsuariosComponent } from '../components/listar-usuarios/listar-usuarios.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:'listarMaterias',component:ListarMateriasComponent},
   {path:'inscribirMaterias',component:InscribirMateriaComponent},
   {path:'verMateriasAdmin',component:VerMateriasAdminComponent},
-  {path:'listarUsuarios',component:ListarUsuariosComponent}
+  {path:'listarUsuarios',component:ListarUsuariosComponent},
+  {path:'bajaUsuario',component:BajaUsuarioComponent}
 ];
 
 @NgModule({

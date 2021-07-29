@@ -53,4 +53,3 @@ export class ListarMateriasProfesorComponent implements OnInit {
     }
   }
 }
-//esta listo hasta el octavo punto completo
