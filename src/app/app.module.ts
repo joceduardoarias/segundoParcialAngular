@@ -52,6 +52,7 @@ import { ActasDeExamenComponent } from './components/actas-de-examen/actas-de-ex
 import { ListadoDeAsignaturasComponent } from './components/listado-de-asignaturas/listado-de-asignaturas.component';
 import { ListadoAprobacionDirectaComponent } from './components/listado-aprobacion-directa/listado-aprobacion-directa.component';
 import { ListadoNoDirectaComponent } from './components/listado-no-directa/listado-no-directa.component';
+import { NoAprobadosPipe } from './pipes/no-aprobados.pipe';
 
 @NgModule({
   declarations: [
@@ -91,6 +92,7 @@ import { ListadoNoDirectaComponent } from './components/listado-no-directa/lista
     ListadoDeAsignaturasComponent,
     ListadoAprobacionDirectaComponent,
     ListadoNoDirectaComponent,
+    NoAprobadosPipe,
   ],
   imports: [
     BrowserModule,

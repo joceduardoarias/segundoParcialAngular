@@ -1,1 +1,38 @@
-<p>listado-no-directa works!</p>
+
+<div *ngIf="materia.nombre" class="col">
+    <!-- <div class="collapse multi-collapse" id="multiCollapseExample1"> -->
+      <h1 class="text-center">Lista de Examenes No aprobación directa</h1>
+      <div *ngIf="arrayExamenes!=null" class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col" *ngFor="let item of arrayExamenes">
+          <div *ngIf="materia.id == item.materia.id" class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-white bg-primary border-primary">
+              <h4 class="my-0 fw-normal">{{item.materia.nombre}}</h4>
+            </div>
+            <div class="card-body">
+              <h2 class="card-title pricing-card-title">Profesor: {{item.profesor.nombre}}<small class="text-muted fw-light"></small></h2>
+              <div  style="width: 100%;">
+                <table class="table table-striped table-bordered table-hover">
+                  <thead class="thead-dark">
+                    <tr>           
+                      <th scope="col">nombre</th>
+                      <th  scope="col">nota</th>
+                      <th  scope="col">imágen</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let alumno of item.alumno|noAprobados">
+                    <tr>    
+                      <td>{{alumno.nombre}}</td>
+                      <td>{{alumno.nota}}</td>
+                      <td><img src={{alumno.imagen}} alt="" width="60px" height="60px"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- <button type="button" class="btn btn-outline-primary"
+                (click)="materiaSeleccionada(item.materia)">Seleccionar</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>

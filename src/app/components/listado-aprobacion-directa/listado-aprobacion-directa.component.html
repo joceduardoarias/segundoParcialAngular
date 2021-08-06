@@ -1,8 +1,7 @@
-<p>listado-aprobacion-directa works! {{materia.nombre}}</p>
 
 <div *ngIf="materia.nombre" class="col">
     <!-- <div class="collapse multi-collapse" id="multiCollapseExample1"> -->
-      <h1 class="text-center">Lista de Examenes</h1>
+      <h1 class="text-center">Lista de Aptobación directa</h1>
       <div *ngIf="arrayExamenes!=null" class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div class="col" *ngFor="let item of arrayExamenes">
           <div *ngIf="materia.id == item.materia.id" class="card mb-4 rounded-3 shadow-sm border-primary">
