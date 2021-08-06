@@ -42,6 +42,16 @@ import { CalificacionPipe } from './pipes/calificacion.pipe';
 import { ProfesorMateriasComponent } from './components/profesor-materias/profesor-materias.component';
 import { ListarMateriasProfesorComponent } from './components/listar-materias-profesor/listar-materias-profesor.component';
 import { BajaUsuarioComponent } from './components/baja-usuario/baja-usuario.component';
+import { UsuariosBjaComponent } from './components/usuarios-bja/usuarios-bja.component';
+import { AltaExamenComponent } from './components/alta-examen/alta-examen.component';
+import { SelectAlumnoComponent } from './components/select-alumno/select-alumno.component';
+import { SelectMateriaComponent } from './components/select-materia/select-materia.component';
+import { ListarExamnesComponent } from './components/listar-examnes/listar-examnes.component';
+import { ExamenesComponent } from './components/examenes/examenes.component';
+import { ActasDeExamenComponent } from './components/actas-de-examen/actas-de-examen.component';
+import { ListadoDeAsignaturasComponent } from './components/listado-de-asignaturas/listado-de-asignaturas.component';
+import { ListadoAprobacionDirectaComponent } from './components/listado-aprobacion-directa/listado-aprobacion-directa.component';
+import { ListadoNoDirectaComponent } from './components/listado-no-directa/listado-no-directa.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +81,16 @@ import { BajaUsuarioComponent } from './components/baja-usuario/baja-usuario.com
     ProfesorMateriasComponent,
     ListarMateriasProfesorComponent,
     BajaUsuarioComponent,
+    UsuariosBjaComponent,
+    AltaExamenComponent,
+    SelectAlumnoComponent,
+    SelectMateriaComponent,
+    ListarExamnesComponent,
+    ExamenesComponent,
+    ActasDeExamenComponent,
+    ListadoDeAsignaturasComponent,
+    ListadoAprobacionDirectaComponent,
+    ListadoNoDirectaComponent,
   ],
   imports: [
     BrowserModule,

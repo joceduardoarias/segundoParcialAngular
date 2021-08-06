@@ -5,4 +5,5 @@ export class Usuario {
     tipo!:string;
     id!:string;
     nota!:string;
+    fecha!:any;
 }

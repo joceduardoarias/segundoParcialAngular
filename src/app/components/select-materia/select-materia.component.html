@@ -1,0 +1,4 @@
+<select>
+    <option value="-1">Seleccione una opción</option>
+    <option [value]="item.nombre" *ngFor="let item of arrMateria" (click)="materiaSeleccionado(item)">{{item.nombre}}</option>
+  </select>

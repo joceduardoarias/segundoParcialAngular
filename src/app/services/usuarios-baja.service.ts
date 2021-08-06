@@ -7,9 +7,9 @@ import { Usuario } from "../clases/usuario";
 @Injectable({
   providedIn: 'root'
 })
-export class UsuariosService {
+export class UsuariosBajaService {
 
-  private dbPath = '/usuariosParcialDos';
+  private dbPath = '/usuariosEliminados';
   usuariosRef : AngularFirestoreCollection<Usuario>
   // tipoUsuario:string = "";
   usuarios: Observable<Usuario[]>;
@@ -36,24 +36,6 @@ export class UsuariosService {
   return this.usuariosRef.add({...usuario});
  }
 
-//  obtenerTipoUsuario(){
-//   var usuarioLogueado = localStorage.getItem('usuario');
-//   const snapshot = this.usuariosRef.get();
-
-//   snapshot.subscribe(lista=>{
-    
-//     lista.docs.forEach(usuario=>{
-//         if (usuario.data().email == usuarioLogueado) {
-//           if (usuario.data().tipo == "admin") {
-//             this.tipoUsuario = usuario.data().tipo;
-//           }
-//         }
-//     });
-    
-//   });
-
-// }
-
  getByEmail(email:string|null|undefined){
   return new Promise((resolve, reject) => {
     this.usuariosRef.get().subscribe((querySnapshot) => {
@@ -68,5 +50,4 @@ export class UsuariosService {
   
   return this.usuariosRef.doc(id).delete();
 }
- 
 }

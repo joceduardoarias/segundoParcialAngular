@@ -1,0 +1,9 @@
+<div style="margin-top: 30px;margin-left: 50%;">
+<app-listar-profesores (enviarProfesor)="procesarProfesor($event)"></app-listar-profesores>
+</div>
+
+<app-listado-de-asignaturas [profesorHijo]="profesor" (materia)="procesarMateria($event)"></app-listado-de-asignaturas>
+
+<app-listado-aprobacion-directa [materia]="materia"></app-listado-aprobacion-directa>
+
+<app-listado-no-directa></app-listado-no-directa>

@@ -20,8 +20,8 @@ export class ListarAlumnosComponent implements OnInit {
         if (a.tipo=="alumno") {
           this.arrayAlumnos.push(a);  
         }
-      })
-    })
+      });
+    });
    }
 
   ngOnInit(): void {

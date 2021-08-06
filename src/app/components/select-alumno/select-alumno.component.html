@@ -1,0 +1,4 @@
+<select>
+    <option value="-1">Seleccione una opción</option>
+    <option [value]="item.email" *ngFor="let item of arrAlumno" (click)="alumnoSeleccionado(item)">{{item.nombre}}</option>
+  </select>

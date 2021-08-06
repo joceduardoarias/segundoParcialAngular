@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <div class="title">
+    Alta Exámen
+  </div>
+  <div class="form">
+    <form [formGroup]="formExamen">
+      <div class="inputfield">
+        <label>Materia</label>
+        <div class="custom_select">
+          <app-select-materia (enviarMateria)="procesarMateria($event)"></app-select-materia>
+        </div>
+      </div>
+      <div class="inputfield">
+        <label>Alumno</label>
+        <div class="custom_select">
+          <app-select-alumno (enviarAlumno)="procesarAlumno($event)"></app-select-alumno>
+        </div>
+      </div>
+      <div class="inputfield">
+        <label>Profesor</label>
+        <div class="custom_select">
+          <app-listar-profesores (enviarProfesor)="procesarProfesor($event)"></app-listar-profesores>
+        </div>
+      </div>
+      <div class="inputfield">
+        <label>Nota</label>
+        <input type="number" class="input" formControlName="nota">
+      </div>
+      <div *ngIf="formExamen.get('nota')!.invalid && (formExamen.get('nota')!.dirty || formExamen.get('nota')!.touched)"
+        class="form-text text-muted" style="margin-left: 142px;margin-top: 0;"><span>*Nota requerido</span></div>
+      <div class="inputfield">
+        <label>Fecha</label>
+        <input type="date" class="input" formControlName="fecha">
+      </div>
+      <div *ngIf="formExamen.get('fecha')!.invalid && (formExamen.get('fecha')!.dirty || formExamen.get('fecha')!.touched)"
+        class="form-text text-muted" style="margin-left: 142px;margin-top: 0;"><span>*Fecha requerido</span></div>
+      <div class="inputfield">
+        <input type="button" value="guardar" class="btn" (click)="altaExamen()">
+      </div>
+    </form>
+  </div>
+</div>
