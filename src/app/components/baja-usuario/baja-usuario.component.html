@@ -2,7 +2,7 @@
   <br>
 <div class="col-sm">
     <!-- <div class="collapse multi-collapse" id="multiCollapseExample2"> -->
-      <h1 class="text-center">Lista de alumnos</h1>
+      <h1 class="text-center">Lista de vendedores</h1>
       <div *ngIf="arrayAlumnos!=null" class="row row-cols-1 row-cols-md-3 mb-3 text-center">        
         <div class="col" *ngFor="let item of arrayAlumnos">
           <div class="card mb-4 rounded-3 shadow-sm border-primary">
@@ -16,7 +16,8 @@
                 <li>Email: {{item.email}}</li>
                 <li>Tipo: {{item.tipo}}</li>
               </ul>
-              <button type="button" class="btn btn-outline-primary" (click)="alumnoSeleccionada(item)">Dar de baja</button>
+              <button type="button" class="btn btn-outline-primary" (click)="alumnoSeleccionada(item, true)">habilitar</button>
+              <button type="button" class="btn btn-outline-primary" (click)="alumnoSeleccionada(item, false)">deshabilitar</button>
             </div>
           </div>
         </div>

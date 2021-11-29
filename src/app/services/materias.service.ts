@@ -8,7 +8,7 @@ import { Materia } from "../clases/materia";
 })
 export class MateriasService {
 
-  private dbPath = '/materias';
+  private dbPath = '/criptomonedas';
   materiasRef : AngularFirestoreCollection<Materia>
   materias : Observable<Materia[]>;
 

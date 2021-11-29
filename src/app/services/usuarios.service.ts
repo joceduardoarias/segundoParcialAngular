@@ -68,5 +68,11 @@ export class UsuariosService {
   
   return this.usuariosRef.doc(id).delete();
 }
+update(id: string, data: Usuario): Promise<void> {
+  return this.usuariosRef.doc(id).update({
+    habilitado: data.habilitado,
+    
+  });
+}
  
 }

@@ -39,7 +39,7 @@ export class AlumnoInscribirMateriaComponent implements OnInit {
   iniciaInscripcion(){
     
       Swal.fire({
-        title: 'Esta seguro de inscribir a '+this.alumno.email+' en la materia '+this.materia.nombre,
+        title: 'Esta seguro de asociar a '+this.alumno.email+' en la moneda '+this.materia.nombre,
         showDenyButton: true,
         showCancelButton: false,
         confirmButtonText: `Aceptar`,
@@ -57,7 +57,7 @@ export class AlumnoInscribirMateriaComponent implements OnInit {
                     });
             break;
             case 1:
-                    Swal.fire('Inscrpción exitosa!', '', 'success')
+                    Swal.fire('operacion exitosa!', '', 'success')
             break;
             case 2:
                     Swal.fire({
@@ -88,6 +88,8 @@ export class AlumnoInscribirMateriaComponent implements OnInit {
       var resultado = 0;
       
       if (this.materia.cupo > 0) {
+        console.log("coso");
+        
         if (this.materia.inscriptos!=undefined) {
           if (this.materia.inscriptos.includes(this.alumno.id)==false) {
             this.materia.inscriptos.push(this.alumno.id);

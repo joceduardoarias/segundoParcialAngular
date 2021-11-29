@@ -27,6 +27,8 @@ export class AlumnoListarMateriaComponent implements OnInit {
       this.arrayMaterias = [];
       res.map(a=>{        
         this.arrayMaterias.push(a);
+        console.log(a);
+        
       });
     });
 
@@ -51,6 +53,8 @@ export class AlumnoListarMateriaComponent implements OnInit {
         if (usuario.email==dataUser.email) {
           //busco en cual materia esta inscrito
           for (var materia of this.arrayMaterias) {
+            console.log("bug");
+            
             if (materia.inscriptos.includes(usuario.id)) {
               this.arrayMisMaterias.push(materia);
             }

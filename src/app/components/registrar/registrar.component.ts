@@ -86,6 +86,7 @@ export class RegistrarComponent implements OnInit {
           this.nuevoUsuario.email = this.formRegistro.get('email')?.value;
           this.nuevoUsuario.tipo = this.formRegistro.get('tipo')?.value;
           this.nuevoUsuario.nombre = this.formRegistro.get('nombre')?.value;
+          this.nuevoUsuario.habilitado = true;
           //Este setInterval se usa para ir revisando si ya esta cargada la url
           var interval = setInterval(()=>{
             this.nuevoUsuario.imagen = this.imagenURL;

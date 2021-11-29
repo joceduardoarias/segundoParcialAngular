@@ -26,8 +26,8 @@ export class AltaMateriaComponent implements OnInit {
     this.imagenURL = "";
     this.formMateria = new FormGroup({
       nombre:  new FormControl('',Validators.required),
-      cuatrimestre:  new FormControl('',Validators.required),
-      cupo: new FormControl('',Validators.required),
+      costo:  new FormControl('',Validators.required),
+      comision: new FormControl('',Validators.required),
       año: new FormControl('',Validators.required),
     });
   }
@@ -38,20 +38,21 @@ export class AltaMateriaComponent implements OnInit {
   altaMateria(){
     
     if (this.formMateria.status=="VALID") {
-      this.uploadImagen();
-      if(this.nuevaMateria.profesor != "-1" && this.nuevaMateria.profesor != undefined){
+      // this.uploadImagen();
+      // if(this.nuevaMateria.profesor != "-1" && this.nuevaMateria.profesor != undefined){
 
         this.nuevaMateria.nombre = this.formMateria.get('nombre')?.value;
-        this.nuevaMateria.cuatrimestre = this.formMateria.get('cuatrimestre')?.value;
+        this.nuevaMateria.costo = this.formMateria.get('costo')?.value;
         this.nuevaMateria.año = this.formMateria.get('año')?.value;
-        this.nuevaMateria.cupo = this.formMateria.get('cupo')?.value;
-        this.nuevaMateria.imagen = this.imagenURL;
+        this.nuevaMateria.comision = this.formMateria.get('comision')?.value;
+        this,this.nuevaMateria.cupo = 100;
+        // this.nuevaMateria.imagen = this.imagenURL;
         //se agraga a la colección
         this.materiaService.create(this.nuevaMateria)
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Marteria guardada',
+          title: 'Cripto guardada',
           showConfirmButton: false,
           timer: 1500
         });
@@ -59,22 +60,22 @@ export class AltaMateriaComponent implements OnInit {
         Swal.fire({
           position: 'center',
           icon: 'error',
-          title: 'Seleccione un profesor!',
+          title: 'Seleccione una cripto!',
           showConfirmButton: false,
           timer: 1500
         });
       }
       
-    }else{
-      //alerte de faltan datos por cargar
-      Swal.fire({
-        position: 'center',
-        icon: 'error',
-        title: 'Todos los campos deben estar cargados!',
-        showConfirmButton: false,
-        timer: 1500
-      });
-    }
+    // }else{
+    //   //alerte de faltan datos por cargar
+    //   Swal.fire({
+    //     position: 'center',
+    //     icon: 'error',
+    //     title: 'Todos los campos deben estar cargados!',
+    //     showConfirmButton: false,
+    //     timer: 1500
+    //   });
+    // }
 
   }
 

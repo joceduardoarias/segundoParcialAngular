@@ -55,7 +55,9 @@ export class InscribirMateriaComponent implements OnInit {
       }else{
         this.materia.inscriptos=[];
         this.materia.inscriptos.push(this.alumno.id);
-        this.materia.cupo--;
+        // this.materia.cupo--;
+        console.log("bug");
+        
         this.materiaServicio.update(this.materia.id,this.materia);
         resultado = 1;
       }      

@@ -19,6 +19,10 @@ export class AuthService {
   * Este método es el encargado de autenticar los usuarios de la app
   */
  public async singIn (email :string, password:string) {
+   console.log(email);
+   console.log(password);
+   
+   
     await this.afAuth.signInWithEmailAndPassword(email,password).then(value=>{
      localStorage.setItem('usuario',email);
      this.router.navigateByUrl('/home');          

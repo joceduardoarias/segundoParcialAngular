@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="title">
-    Alta materia
+    Alta cripto
   </div>
   <div class="form">
     <form [formGroup]="formMateria">
@@ -10,28 +10,28 @@
       </div>
 
       <div class="inputfield">
-        <label>Cuatrimestre</label>
-        <input type="text" class="input" formControlName="cuatrimestre">
+        <label>costo</label>
+        <input type="number" class="input" formControlName="costo">
       </div>
-      <div class="inputfield">
+      <!-- <div class="inputfield">
         <label>Profesor</label>
         <div class="custom_select">
           <app-listar-profesores (enviarProfesor)="procesarProfesor($event)"></app-listar-profesores>
         </div>
-      </div>
+      </div> -->
       <div class="inputfield">
-        <label>Cupo</label>
-        <input type="text" class="input" formControlName="cupo">
+        <label>comision</label>
+        <input type="number" class="input" formControlName="comision">
       </div>
       <div class="inputfield">
         <label>año</label>
         <input type="date" class="input" formControlName="año">
       </div>
-      <div class="inputfield">
+      <!-- <div class="inputfield">
         <label>Cargar imágen</label>
         <input type="file" id="file" class="input" (change)="obtenerImagen($event)" accept="*.png.jpg">
         <img *ngIf="imagenPreview" src={{imagenPreview}} width="50px" height="50px">
-      </div>
+      </div> -->
       <div class="inputfield">
         <input type="button" value="guardar" class="btn" (click)="altaMateria()">
       </div>

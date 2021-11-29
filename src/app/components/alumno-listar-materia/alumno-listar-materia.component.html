@@ -1,4 +1,4 @@
-<h1 class="text-center">Lista de materias</h1>
+<h1 class="text-center">Lista de monedas</h1>
 <div *ngIf="arrayMaterias!=null && verMaterias" class="row row-cols-1 row-cols-md-3 mb-3 text-center">
   <div class="col" *ngFor="let item of arrayMaterias">
     <div class="card mb-4 rounded-3 shadow-sm border-primary">
@@ -6,10 +6,10 @@
         <h4 class="my-0 fw-normal">{{item.nombre}}</h4>
       </div>
       <div class="card-body">
-        <h2 class="card-title pricing-card-title">{{item.profesor}}<small class="text-muted fw-light"></small></h2>
+        <h2 class="card-title pricing-card-title">{{item.costo}}<small class="text-muted fw-light"></small></h2>
         <ul class="list-unstyled mt-3 mb-4">
-          <li [appResaltar]="item.cupo">Cupos: {{item.cupo}}</li>
-          <li>Cuatrimestre: {{item.cuatrimestre}}</li>
+          <li [appResaltar]="item.comision">comision: {{item.comision}}</li>
+          <!-- <li>año: {{item.año}}</li> -->
         </ul>
         <button type="button" class="btn btn-outline-primary" (click)="materiaSeleccionada(item)">Seleccionar</button>
       </div>
@@ -24,10 +24,10 @@
         <h4 class="my-0 fw-normal">{{item.nombre}}</h4>
       </div>
       <div class="card-body">
-        <h2 class="card-title pricing-card-title">{{item.profesor}}<small class="text-muted fw-light"></small></h2>
+        <h2 class="card-title pricing-card-title">{{item.costo}}<small class="text-muted fw-light"></small></h2>
         <ul class="list-unstyled mt-3 mb-4">
-          <li [appResaltar]="item.cupo">Cupos: {{item.cupo}}</li>
-          <li>Cuatrimestre: {{item.cuatrimestre}}</li>
+          <li [appResaltar]="item.cupo">Comision: {{item.comision}}</li>
+          <!-- <li>Cuatrimestre: {{item.cuatrimestre}}</li> -->
         </ul>
         <!-- <button type="button" class="btn btn-outline-primary" (click)="materiaSeleccionada(item)">Seleccionar</button> -->
       </div>

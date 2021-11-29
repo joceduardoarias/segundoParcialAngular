@@ -6,4 +6,5 @@ export class Usuario {
     id!:string;
     nota!:string;
     fecha!:any;
+    habilitado!:boolean;
 }

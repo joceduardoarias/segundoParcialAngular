@@ -16,7 +16,7 @@ export class BajaUsuarioComponent implements OnInit {
     this.usuarioService.usuarios.subscribe(res=>{
       this.arrayAlumnos = [];
       res.map(a=>{
-        if (a.tipo=="alumno") {
+        if (a.tipo=="vendedor") {
           this.arrayAlumnos.push(a);  
           console.log(a);
           
@@ -28,7 +28,8 @@ export class BajaUsuarioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  alumnoSeleccionada(usuario:Usuario){
+  alumnoSeleccionada(usuario:Usuario,habilitar:boolean){
+    usuario.habilitado = habilitar;
     console.log( "dar de baja: ",usuario);
     Swal.fire({
       title: 'Estas seguro de eliminar a '+ usuario.nombre +'?',
