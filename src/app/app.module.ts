@@ -53,7 +53,8 @@ import { ListadoDeAsignaturasComponent } from './components/listado-de-asignatur
 import { ListadoAprobacionDirectaComponent } from './components/listado-aprobacion-directa/listado-aprobacion-directa.component';
 import { ListadoNoDirectaComponent } from './components/listado-no-directa/listado-no-directa.component';
 import { NoAprobadosPipe } from './pipes/no-aprobados.pipe';
-
+import { ListarVendedoresComponent } from './components/listar-vendedores/listar-vendedores.component';
+import { AltaCriptoMonedaComponent } from './components/alta-cripto-moneda/alta-cripto-moneda.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,6 +94,8 @@ import { NoAprobadosPipe } from './pipes/no-aprobados.pipe';
     ListadoAprobacionDirectaComponent,
     ListadoNoDirectaComponent,
     NoAprobadosPipe,
+    ListarVendedoresComponent,
+    AltaCriptoMonedaComponent
   ],
   imports: [
     BrowserModule,

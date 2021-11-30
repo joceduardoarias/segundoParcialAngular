@@ -70,7 +70,7 @@ export class UsuariosService {
 }
 update(id: string, data: Usuario): Promise<void> {
   return this.usuariosRef.doc(id).update({
-    habilitado: data.habilitado,
+    habilitado: data.habilitado
     
   });
 }

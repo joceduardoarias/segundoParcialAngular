@@ -28,8 +28,9 @@ export class AdminGuard implements CanActivate {
   var dataUser : any = await this.usuarioService.getByEmail(user?.email);
   
   if (dataUser) {
-
-    if(dataUser.tipo == 'admin'){
+    console.log(dataUser);
+    
+    if(dataUser.tipo == 'administrador'){
       return true;
     }else{
       this.router.navigateByUrl('login');

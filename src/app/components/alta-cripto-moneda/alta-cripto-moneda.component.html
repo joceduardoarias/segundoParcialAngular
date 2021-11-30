@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <div class="title">
+      Alta cripto
+    </div>
+    <div class="form">
+      <form [formGroup]="formMateria">
+        <div class="inputfield">
+          <label>Nombre</label>
+          <input type="text" class="input" formControlName="nombre">
+        </div>
+  
+        <div class="inputfield">
+          <label>costo</label>
+          <input type="number" class="input" formControlName="costo">
+        </div>
+        <!-- <div class="inputfield">
+          <label>Profesor</label>
+          <div class="custom_select">
+            <app-listar-profesores (enviarProfesor)="procesarProfesor($event)"></app-listar-profesores>
+          </div>
+        </div> -->
+        <div class="inputfield">
+          <label>comision</label>
+          <input type="number" class="input" formControlName="comision">
+        </div>
+        <div class="inputfield">
+          <label>año</label>
+          <input type="date" class="input" formControlName="año">
+        </div>
+        <!-- <div class="inputfield">
+          <label>Cargar imágen</label>
+          <input type="file" id="file" class="input" (change)="obtenerImagen($event)" accept="*.png.jpg">
+          <img *ngIf="imagenPreview" src={{imagenPreview}} width="50px" height="50px">
+        </div> -->
+        <div class="inputfield">
+          <input type="button" value="guardar" class="btn" (click)="altaCripto()">
+        </div>
+      </form>
+    </div>
+  </div>
+  

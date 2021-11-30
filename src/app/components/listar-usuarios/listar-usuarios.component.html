@@ -3,8 +3,6 @@
     <h1>Listar Usuarios</h1>
     <p class="lead text-muted">Seleccione una opción de filtrado</p>
     <p>
-      <!-- <a href="#" class="btn btn-primary my-2">Main call to action</a>
-      <a href="#" class="btn btn-secondary my-2">Secondary action</a>       -->
     </p>
     <div class="row">      
       <div class="col-sm-4"></div>
@@ -13,7 +11,7 @@
           <option value="-1">Seleccione una opción</option>
           <option value="vendedor">vendedor</option>
           <option value="comprador">comprador</option>
-          <!-- <option value="profesor">Profesor</option> -->
+          <option value="administrador">administrador</option>
         </select>
       </div>
       <div class="col-sm-4"></div>
@@ -23,8 +21,8 @@
 <br>
 <div class="col-sm">
     <div>
-      <div *ngIf="arrayUsuarios!=null && !verFiltrado" class="row row-cols-1 row-cols-md-3 mb-3 text-center">        
-        <div class="col" *ngFor="let item of arrayUsuarios|filtrarUsuario">
+      <div *ngIf="arrayUsuarios!=null" class="row row-cols-1 row-cols-md-3 mb-3 text-center">        
+        <div class="col" *ngFor="let item of arrayUsuarios|filtrarUsuario: filtro">
           <div class="card mb-4 rounded-3 shadow-sm border-primary">
             <div class="card-header py-3 text-white bg-primary border-primary">
               <h4 class="my-0 fw-normal">{{item.nombre}}</h4>
@@ -45,25 +43,4 @@
     </div>
   </div>
   
-  <div class="col-sm">
-    <div>
-      <div *ngIf="arrayAux!=null && verFiltrado" class="row row-cols-1 row-cols-md-3 mb-3 text-center">        
-        <div class="col" *ngFor="let item of arrayAux|filtrarUsuario">
-          <div class="card mb-4 rounded-3 shadow-sm border-primary">
-            <div class="card-header py-3 text-white bg-primary border-primary">
-              <h4 class="my-0 fw-normal">{{item.nombre}}</h4>
-            </div>
-            <img [src]="item.imagen" width="100%" height="225" class="card-img-top" alt="...">
-            <div class="card-body">
-              <!-- <h1 class="card-title pricing-card-title">texto prueba<small class="text-muted fw-light"></small></h1> -->
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>{{item.tipo}}</li>
-                <li>{{item.email}}</li>
-                <li>{{item.nota|calificacion}}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  

@@ -5,19 +5,20 @@ import { Usuario } from '../clases/usuario';
   name: 'filtrarUsuario'
 })
 export class FiltrarUsuarioPipe implements PipeTransform {
+  
+  arrAux:Usuario[]=[];
+  transform(value: Usuario[], arg: any): Usuario[] {
 
-  transform(value: Usuario[], ...arg: any): Usuario[] {
-
+    console.log(arg);
+    
     if (value) {
       for (var usuario of value) {
-        console.log(usuario);
-        
-        usuario.tipo = usuario.tipo.toUpperCase();        
-        // usuario.nombre.toUpperCase();
-        usuario.imagen = usuario.imagen
-        usuario.email = usuario.email.toLowerCase();
+       if (usuario.tipo == arg) {
+         this.arrAux.push(usuario);
+       }
       }
-      
+      value = this.arrAux;
+      this.arrAux = [];
       return value;
     }else{
       console.log("El array que se le pasa al pipe esta vacío");
