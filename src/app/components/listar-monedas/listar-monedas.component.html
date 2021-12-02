@@ -1,0 +1,64 @@
+<div class="col">
+  <h1 class="text-center">Lista de monedas</h1>
+  <div
+    *ngIf="monedas != null && !vendedor"
+    class="row row-cols-1 row-cols-md-3 mb-3 text-center"
+  >
+    <div class="col" *ngFor="let item of monedas">
+      <div class="card mb-4 rounded-3 shadow-sm border-primary">
+        <div class="card-header py-3 text-white bg-primary border-primary">
+          <h4 class="my-0 fw-normal">{{ item.nombre }}</h4>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title pricing-card-title">
+            {{ item.profesor }}<small class="text-muted fw-light"></small>
+          </h2>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Comision: {{ item.comision }}</li>
+            <li>Costo actual: {{ item.costoActual }}</li>
+            <li>Ano: {{ item.ano }}</li>
+          </ul>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            (click)="monedaSeleccionada(item)"
+          >
+            Seleccionar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Si hay un vendedor que se recibe por input muestro sus monedas -->
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center" *ngIf="vendedor">
+  <div class="col" *ngFor="let item of monedas">
+    <div *ngFor="let mVendedor of vendedor.criptos">
+      <div *ngIf="mVendedor == item.id">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-white bg-primary border-primary">
+            <h4 class="my-0 fw-normal">{{ item.nombre }}</h4>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title pricing-card-title">
+              {{ item.profesor }}<small class="text-muted fw-light"></small>
+            </h2>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Comision: {{ item.comision }}</li>
+              <li>Costo actual: {{ item.costoActual }}</li>
+              <li>{{item.comision|calificacion}}</li>
+              <li>Ano: {{ item.ano }}</li>
+            </ul>
+            <!-- <button
+              type="button"
+              class="btn btn-outline-primary"
+              (click)="monedaSeleccionada(item)"
+            >
+              Seleccionar
+            </button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

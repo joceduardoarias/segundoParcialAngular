@@ -7,4 +7,5 @@ export class Usuario {
     nota!:string;
     fecha!:any;
     habilitado!:boolean;
+    criptos:string[];
 }

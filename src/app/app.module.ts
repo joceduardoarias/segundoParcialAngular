@@ -55,6 +55,10 @@ import { ListadoNoDirectaComponent } from './components/listado-no-directa/lista
 import { NoAprobadosPipe } from './pipes/no-aprobados.pipe';
 import { ListarVendedoresComponent } from './components/listar-vendedores/listar-vendedores.component';
 import { AltaCriptoMonedaComponent } from './components/alta-cripto-moneda/alta-cripto-moneda.component';
+import { ListarMonedasComponent } from './components/listar-monedas/listar-monedas.component';
+import { SelecionarMonedaComponent } from './components/selecionar-moneda/selecionar-moneda.component';
+import { VendedorHomeComponent } from './components/vendedor-home/vendedor-home.component';
+import { MonedasAsignadasComponent } from './components/monedas-asignadas/monedas-asignadas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,7 +99,11 @@ import { AltaCriptoMonedaComponent } from './components/alta-cripto-moneda/alta-
     ListadoNoDirectaComponent,
     NoAprobadosPipe,
     ListarVendedoresComponent,
-    AltaCriptoMonedaComponent
+    AltaCriptoMonedaComponent,
+    ListarMonedasComponent,
+    SelecionarMonedaComponent,
+    VendedorHomeComponent,
+    MonedasAsignadasComponent
   ],
   imports: [
     BrowserModule,
