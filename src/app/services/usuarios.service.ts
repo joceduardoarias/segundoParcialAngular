@@ -79,5 +79,12 @@ updateMoneda(id: string, data: Usuario): Promise<void> {
     criptos: data.criptos
     
   });
+  
+}
+updateMonedaCompra(id: string, data: Usuario): Promise<void> {
+  return this.usuariosRef.doc(id).update({
+    criptosCompra: data.criptosCompra
+    
+  });
 }
 }

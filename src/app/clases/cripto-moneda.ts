@@ -4,4 +4,5 @@ export class CriptoMoneda {
     comision:number;
     año:Date;
     id:string;
+    cantidad:number;
 }

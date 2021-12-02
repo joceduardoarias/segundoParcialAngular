@@ -1,3 +1,5 @@
+import { CriptoMoneda } from "./cripto-moneda";
+
 export class Usuario {
     nombre!:string;
     email!: string;
@@ -8,4 +10,5 @@ export class Usuario {
     fecha!:any;
     habilitado!:boolean;
     criptos:string[];
+    criptosCompra:CriptoMoneda[];
 }
