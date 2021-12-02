@@ -1,57 +1,70 @@
-<div class="col-sm">
-  <h1 class="text-center">Lista de vendedores</h1>
-  <div
-    *ngIf="vendedoresList != null"
-    class="row row-cols-1 row-cols-md-3 mb-3 text-center"
-  >
-    <div class="col" *ngFor="let item of vendedoresList">
-      <div class="card mb-4 rounded-3 shadow-sm border-primary">
-        <div class="card-header py-3 text-white bg-primary border-primary">
-          <h4 class="my-0 fw-normal">{{ item.email }}</h4>
+<div class="album py-5 bg-light">
+  <div class="container">
+
+    <div class="row">          
+      <div class="col-md-4">
+          <h1 class="text-center">Comprar Moneda</h1>
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/comprador/comprarMoneda">Ir Comprar</button>
+                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+              </div>
+              <!-- <small class="text-muted">9 mins</small> -->
+            </div>
+          </div>
         </div>
-        <img
-          [src]="item.imagen"
-          width="100%"
-          height="225"
-          class="card-img-top"
-          alt="..."
-        />
+      </div>
+
+      <div class="col-md-4">
+        <h1 class="text-center">Monedas compradas</h1>
+      <div class="card mb-4 shadow-sm">
         <div class="card-body">
-          <h1 class="card-title pricing-card-title">
-            texto prueba<small class="text-muted fw-light"></small>
-          </h1>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li *ngIf="item.habilitado">Habilitado</li>
-            <li *ngIf="!item.habilitado">DesHabilitado</li>
-          </ul>
-          <button
-            type="button"
-            class="btn btn-outline-primary"
-            (click)="verMonedas(item)"
-          >
-            ver monedas
-          </button>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/comprador/monedasCompradas">Ir ver monedas</button>
+              <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+            </div>
+            <!-- <small class="text-muted">9 mins</small> -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- Moneda del vendedor -->
-<div *ngIf="monedasVendedorList">
-  <div class="card" style="width: 18rem; margin-left: 20%">
-    <div class="card-body">
-      <h5 class="card-title">Monedas</h5>
-      <ul
-        *ngFor="let item of monedasVendedorList"
-        class="list-unstyled mt-3 mb-4"
-      >
-        <li (click)="selecionaMoneda(item)">{{ item.nombre }}</li>
-        <li>{{ item.costoActual }}</li>
-            
-      </ul>      
-      <input type="number" style="width: 50px;margin-right: 5px;" [(ngModel)]="cantidad">
-    </div>    
-    <button class="btn btn-primary" (click)="comprar()">Comprar</button>
+      
+      <!-- <div class="col-md-4">
+        <h1 class="text-center">Listar Usuarios</h1>
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/administrador/listarUsuarios">Ir a listar usuarios</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="col-md-4">
+        <h1 class="text-center">Baja usuarios</h1>
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/administrador/bajaUsuario">Ir a baja usuarios</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      
+    </div>
   </div>
 </div>

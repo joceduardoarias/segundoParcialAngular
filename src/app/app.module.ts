@@ -60,6 +60,8 @@ import { SelecionarMonedaComponent } from './components/selecionar-moneda/seleci
 import { VendedorHomeComponent } from './components/vendedor-home/vendedor-home.component';
 import { MonedasAsignadasComponent } from './components/monedas-asignadas/monedas-asignadas.component';
 import { CompradorHomeComponent } from './components/comprador-home/comprador-home.component';
+import { ComprarMonedaComponent } from './components/comprar-moneda/comprar-moneda.component';
+import { MonedasCompradasComponent } from './components/monedas-compradas/monedas-compradas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,7 +107,9 @@ import { CompradorHomeComponent } from './components/comprador-home/comprador-ho
     SelecionarMonedaComponent,
     VendedorHomeComponent,
     MonedasAsignadasComponent,
-    CompradorHomeComponent
+    CompradorHomeComponent,
+    ComprarMonedaComponent,
+    MonedasCompradasComponent
   ],
   imports: [
     BrowserModule,
