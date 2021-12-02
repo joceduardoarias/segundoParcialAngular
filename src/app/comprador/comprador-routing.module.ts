@@ -6,9 +6,9 @@ import { MonedasCompradasComponent } from '../components/monedas-compradas/moned
 
 
 const routes: Routes = [
-  {path:"compradorHome",component:CompradorHomeComponent},
-  {path:"comprarMoneda",component:ComprarMonedaComponent},
-  {path:"monedasCompradas",component:MonedasCompradasComponent}
+  {path:"compradorHome",component:CompradorHomeComponent,data: {animation: 'Menu'}},
+  {path:"comprarMoneda",component:ComprarMonedaComponent,data: {animation: 'Menu'}},
+  {path:"monedasCompradas",component:MonedasCompradasComponent,data: {animation: 'Menu'}}
 ];
 
 @NgModule({

@@ -4,9 +4,9 @@ import { MonedasAsignadasComponent } from '../components/monedas-asignadas/moned
 import { SelecionarMonedaComponent } from '../components/selecionar-moneda/selecionar-moneda.component';
 import { VendedorHomeComponent } from '../components/vendedor-home/vendedor-home.component';
 const routes: Routes = [
-  {path:"vendedorHome",component:VendedorHomeComponent},
-  {path:"seleccionarMoneda",component:SelecionarMonedaComponent},
-  {path:"monedasAsignadas",component:MonedasAsignadasComponent}
+  {path:"vendedorHome",component:VendedorHomeComponent,data: {animation: 'Cartilla'}},
+  {path:"seleccionarMoneda",component:SelecionarMonedaComponent,data: {animation: 'Cartilla'}},
+  {path:"monedasAsignadas",component:MonedasAsignadasComponent,data: {animation: 'Cartilla'}}
 ];
 
 @NgModule({

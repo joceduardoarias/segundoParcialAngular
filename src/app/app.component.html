@@ -1,2 +1,4 @@
 <app-barra-navegacion></app-barra-navegacion>
-<router-outlet></router-outlet>
+<main  [@routeAnimations]="preparedRoute(outlet)">
+    <router-outlet #outlet="outlet" ></router-outlet>
+</main>

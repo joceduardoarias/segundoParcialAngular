@@ -15,10 +15,10 @@ import { ListarVendedoresComponent } from '../components/listar-vendedores/lista
 import { AdminGuard } from '../guards/admin.guard';
 
 const routes: Routes = [
-  {path:'adminHome',component:AdminHomeComponent,canActivate:[AdminGuard]},
-  {path:'listarVendedores', component:ListarVendedoresComponent},
-  {path:'altaCriptoMoneda',component:AltaCriptoMonedaComponent},
-  {path:'listarUsuarios',component:ListarUsuariosComponent},
+  {path:'adminHome',component:AdminHomeComponent,canActivate:[AdminGuard],data: {animation: 'Menu'}},
+  {path:'listarVendedores', component:ListarVendedoresComponent,data: {animation: 'Cartilla'}},
+  {path:'altaCriptoMoneda',component:AltaCriptoMonedaComponent,data: {animation: 'Cartilla'}},
+  {path:'listarUsuarios',component:ListarUsuariosComponent,data: {animation: 'Cartilla'}},
   // {path:'registrarAdmin',component:RegistrarAdminComponent},
   // {path:'altaMateria',component:AltaMateriaComponent},
   // {path:'listarMaterias',component:ListarMateriasComponent},

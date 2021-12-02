@@ -5,9 +5,9 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrarComponent } from './components/registrar/registrar.component';
 
 const routes: Routes = [
-  {path:'login',component:LoginComponent},
-  {path:'login/registrar',component:RegistrarComponent},
-  {path:'home',component:HomeComponent},  
+  {path:'login',component:LoginComponent,data: {animation: 'Login'}},
+  {path:'login/registrar',component:RegistrarComponent,data: {animation: 'Registro'}},
+  {path:'home',component:HomeComponent,data: {animation: 'Home'}},  
   {path:'',redirectTo:'login',pathMatch:'full'},
   { path: 'administrador', loadChildren: () => import('./administrador/administrador.module').then(m => m.AdministradorModule) },
   { path: 'alumno', loadChildren: () => import('./alumno/alumno.module').then(m => m.AlumnoModule) },
